@@ -3,21 +3,21 @@
 ## How do I install the Seam CLI cask?
 
 ```sh
-brew install --cask seamapi/tap/seam
+brew install --cask seamapi/tap/seam-cli
 ```
 
 Or tap the repository first and install the cask by name:
 
 ```sh
 brew tap seamapi/tap
-brew install --cask seam
+brew install --cask seam-cli
 ```
 
 Or, in a `brew bundle` `Brewfile`:
 
 ```ruby
 tap "seamapi/tap"
-cask "seam"
+cask "seam-cli"
 ```
 
 ## Documentation

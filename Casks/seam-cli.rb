@@ -1,4 +1,4 @@
-cask "seam" do
+cask "seam-cli" do
   arch arm: "arm64", intel: "x64"
   os macos: "darwin", linux: "linux"
 

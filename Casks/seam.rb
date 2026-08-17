@@ -2,11 +2,11 @@ cask "seam" do
   arch arm: "arm64", intel: "x64"
   os macos: "darwin", linux: "linux"
 
-  version "0.24.1"
-  sha256 arm:          "bc29a95fe0c38c1d521127fb515d9a77ad6b4dae9be596fe959ef6ee6be587f2",
-         intel:        "187e04f6cb003f1c1ae9d9dbaa1ff0c0d6d202ee3abce22c172f87b051417c37",
-         arm64_linux:  "aba1556d8af3fe74a0eaaf64ae7a423fb545803e3c47e24dd44da114773de920",
-         x86_64_linux: "6ab3c7c56e88fa25ba0007d98023149eab33e0586032be212194682ae5083393"
+  version "0.27.0"
+  sha256 arm:          "a83fa2d34d27b2b7a50e73ad0933b5261922748b79b67a0a83b922213e48e8e1",
+         intel:        "4922573b0e3515702349572bdb1972bb75a2aa1dbdd7e2712f566de72ef12892",
+         arm64_linux:  "9b9f8f0a7e793ea9190d6f22813fafa8d878d331612b89c3c9727e983aee8605",
+         x86_64_linux: "33850282b76a6d57cf1efd6073c4416e83ec4a0ca2ee5779dd1585b2c219223d"
 
   on_macos do
     zap trash: [
@@ -37,12 +37,8 @@ cask "seam" do
   container type: :naked
 
   binary "seam-v#{version}-#{os}-#{arch}", target: "seam"
-  resource "completions" do
-    url "https://github.com/seamapi/cli/releases/download/v#{version}/seam-completions-v#{version}.tar.gz"
-    sha256 "40b2acd6216ee4e8c4b3421d05669d0f5f2589e24795fd8a2d0ae3542b80ec51"
-  end
-
-  bash_completion "completions/seam.bash", target: "seam"
-  fish_completion "completions/seam.fish"
-  zsh_completion "completions/seam.zsh", target: "_seam"
+  generate_completions_from_executable "seam-v#{version}-#{os}-#{arch}",
+                                       "completion",
+                                       "--loader",
+                                       base_name: "seam"
 end

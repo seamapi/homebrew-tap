@@ -1,16 +1,23 @@
 # Seamapi Tap
 
-## How do I install these formulae?
+## How do I install the Seam CLI cask?
 
-`brew install seamapi/tap/<formula>`
+```sh
+brew install --cask seamapi/tap/seam
+```
 
-Or `brew tap seamapi/tap` and then `brew install <formula>`.
+Or tap the repository first and install the cask by name:
+
+```sh
+brew tap seamapi/tap
+brew install --cask seam
+```
 
 Or, in a `brew bundle` `Brewfile`:
 
 ```ruby
 tap "seamapi/tap"
-brew "<formula>"
+cask "seam"
 ```
 
 ## Documentation

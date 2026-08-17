@@ -49,8 +49,9 @@ jobs:
       - run: brew test-bot --only-setup
 
       - run: brew test-bot --only-tap-syntax
-      - run: brew test-bot --only-formulae
+      - name: Audit casks
         if: github.event_name == 'pull_request'
+        run: brew audit --cask --strict Casks/*.rb
 
       - name: Upload bottles as artifact
         if: always() && github.event_name == 'pull_request'

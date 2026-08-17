@@ -32,10 +32,10 @@ jobs:
         id: git_setup
         uses: Homebrew/actions/git-user-config@b35a29a0f83ee8b8ca07b219fc8db3d7bb88ab49 # 2026.08.10.2
 
-      - name: Bump formulae
+      - name: Bump casks
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           HOMEBREW_GIT_COMMITTER_NAME: ${{ steps.git_setup.outputs.name }}
           HOMEBREW_GIT_COMMITTER_EMAIL: ${{ steps.git_setup.outputs.email }}
           TAP_NAME: ${{ steps.set-up-homebrew.outputs.tap-name }}
-        run: brew bump --no-fork --open-pr --formulae --bump-synced --tap="$TAP_NAME"
+        run: brew bump --no-fork --open-pr --casks --tap="$TAP_NAME"

@@ -41,4 +41,22 @@ cask "seam-cli" do
                                        "completion",
                                        "--loader",
                                        base_name: "seam"
+  def caveats
+    <<~EOS
+      Shell completions are installed.
+
+      zsh:
+        If your zsh configuration does not already initialize completions,
+        add the following to ~/.zshrc:
+
+          autoload -Uz compinit
+          compinit
+
+      bash:
+        Ensure bash-completion is installed and initialized.
+
+      fish:
+        No additional setup is required.
+    EOS
+  end
 end

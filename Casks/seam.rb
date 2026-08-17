@@ -37,13 +37,12 @@ cask "seam" do
   container type: :naked
 
   binary "seam-v#{version}-#{os}-#{arch}", target: "seam"
-
   resource "completions" do
     url "https://github.com/seamapi/cli/releases/download/v#{version}/seam-completions-v#{version}.tar.gz"
     sha256 "40b2acd6216ee4e8c4b3421d05669d0f5f2589e24795fd8a2d0ae3542b80ec51"
   end
 
   bash_completion "completions/seam.bash", target: "seam"
-  zsh_completion "completions/seam.zsh", target: "_seam"
   fish_completion "completions/seam.fish"
+  zsh_completion "completions/seam.zsh", target: "_seam"
 end

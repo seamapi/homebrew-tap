@@ -3,12 +3,14 @@
 ## How do I install the Seam CLI cask?
 
 ```sh
+brew uninstall --cask seam # if installed as a Homebrew cask
 brew install --cask seamapi/tap/seam-cli
 ```
 
 Or tap the repository first and install the cask by name:
 
 ```sh
+brew uninstall --cask seam # if installed as a Homebrew cask
 brew tap seamapi/tap
 brew install --cask seam-cli
 ```

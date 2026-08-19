@@ -2,11 +2,11 @@ cask "seam-cli" do
   arch arm: "arm64", intel: "x64"
   os macos: "darwin", linux: "linux"
 
-  version "0.28.0"
-  sha256 arm:          "5c378c364b49a32a3bd2162d276f72874cd34973ae9dc30da00ce8c0e94944b2",
-         intel:        "3d672a2b1f13ccb6721496ebd17d58f38cefc96096c0a8d87678644f19c75d8f",
-         arm64_linux:  "61edbac099c928fb573b55303522aaea15dc3385f75c3870de5ea19855260aac",
-         x86_64_linux: "6516ee96d7fe06a3c8a69527efa696268951d0d8c15ef753ba8c76941a89bf48"
+  version "0.29.0"
+  sha256 arm:          "822fa8c4d23b68703267764986c89e8a7cebb55af0c27076927bc0f08ba3d236",
+         intel:        "07727daaf42e1629971fd92a804ba3178dde5537ac30e492036c65f5bbeb8006",
+         arm64_linux:  "30f980d9966a5c5dcaadbbdf86f49357628cd3eaa1ae0cd278889443a64df584",
+         x86_64_linux: "2fb4ed605b7596e4d2da770a4cc84c59df1e6f3bf0c4d3e5499a1dced582335a"
 
   on_macos do
     zap trash: [
